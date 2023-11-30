@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b, #ffa48b, #ff7e5f);
+    animation: gradientAnimation 15s infinite linear;
+    font-family: 'RomanticFont', sans-serif;
+    color: #fff;
+}
+
+#timer {
+    font-size: 2rem; /* Adjusted size for the timer text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes textAnimation {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.muse {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    animation: heartBeat 1s infinite alternate;
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+.glitch-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #000000;
+}
+
+.glitch {
+    position: relative;
+    font-size: 1.5rem; /* Adjusted size for the glitched text */
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: 3px;
+    z-index: 1;
+    display: inline-block; /* Display in the same line */
+}
+
+.glitch:before,
+.glitch:after {
+    display: block;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.glitch:before {
+    animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    color: #00FFFF;
+    z-index: -1;
+}
+
+.glitch:after {
+    animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+    color: #FF00FF;
+    z-index: -2;
+}
+
+@keyframes glitch-it {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-2px, -2px);
+    }
+    60% {
+        transform: translate(2px, 2px);
+    }
+    80% {
+        transform: translate(2px, -2px);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+
+
+ h1{
+   color: #FFF;
+ }
+ 
+ .glitch-text {
+    text-shadow: -2px -2px 0 cyan, 2px 2px 0 magenta;
+    font-family: 'Roboto', sans-serif; /* Replace 'Roboto' with the desired font */
+    margin: 0;
+    color: black;
+}
+
+.glitch-box {
+    background-color: white; /* Set background color to white */
+    box-shadow: -8px -8px 0 cyan, 8px 8px 0 magenta;
+    border: none;
+    padding: 1vw; /* Set padding to 10% of viewport width */
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+}

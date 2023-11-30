@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>message for you</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   
+    <div class="glitch-wrapper">
+
+        <div id="timer" class="glitch" data-text="">
+            <h1>Time We have been Togetherrr</h1>
+            <div class="container w-1/4">
+  
+              
+              </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Set the target date (August 1, 2023)
+        const targetDate = new Date('August 1, 2023 00:00:00').getTime();
+
+        // Update the countdown every second
+        const timerInterval = setInterval(updateTimer, 1000);
+
+        function updateTimer() {
+            // Get the current date and time
+            const currentDate = new Date().getTime();
+
+            // Calculate the time difference
+            const timeDifference = currentDate-targetDate;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Display the glitched countdown
+            const glitchedTimerElement = document.getElementById('timer');
+            glitchedTimerElement.setAttribute('data-text', `${days}d ${hours}h ${minutes}m ${seconds}s`);
+        }
+    </script>
+</body>
+</html>
